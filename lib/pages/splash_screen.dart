@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gchat/pages/welcome_screen.dart'; // Import the WelcomeScreen
+import 'package:gchat/pages/welcome_screen.dart'; // Replace with your app name
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: Image.asset(
           'assets/images/splash_logo.png', // Path to the splash screen image

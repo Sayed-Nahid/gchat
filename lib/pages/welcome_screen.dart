@@ -6,6 +6,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -18,15 +19,14 @@ class WelcomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20), // Spacing between logo and text
             // Welcome message
-            const Text(
+            Text(
               'Welcome to G-Chat',
-              style: TextStyle(
-                fontSize: 24,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
-            const SizedBox(height: 20), // Spacing between text and buttons
+            const SizedBox(height: 30), // Spacing between text and buttons
             // Sign Up Button
             ElevatedButton(
               onPressed: () {
@@ -36,17 +36,18 @@ class WelcomeScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 18), // Wider and taller
+                backgroundColor: Color(0xFF81D8D0), // Set button color to #81D8D0
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(8), // Square-ish corners
                 ),
               ),
               child: const Text(
                 'Sign Up',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white), // White text for contrast
               ),
             ),
-            const SizedBox(height: 10), // Spacing between buttons
+            const SizedBox(height: 20), // Spacing between buttons
             // Sign In Button
             ElevatedButton(
               onPressed: () {
@@ -56,14 +57,15 @@ class WelcomeScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 18), // Wider and taller
+                backgroundColor: Color(0xFF81D8D0), // Set button color to #81D8D0
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(8), // Square-ish corners
                 ),
               ),
               child: const Text(
                 'Sign In',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white), // White text for contrast
               ),
             ),
           ],
