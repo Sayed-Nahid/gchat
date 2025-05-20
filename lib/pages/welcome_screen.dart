@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart'; // Import the LoginScreen
+import 'signup_screen.dart'; // Import the SignUpScreen
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -30,16 +32,17 @@ class WelcomeScreen extends StatelessWidget {
             // Sign Up Button
             ElevatedButton(
               onPressed: () {
-                // Placeholder for Sign Up functionality
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Sign Up clicked')),
+                // Navigate to the SignUpScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignupScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 18), // Wider and taller
-                backgroundColor: Color(0xFF81D8D0), // Set button color to #81D8D0
+                backgroundColor: const Color(0xFF81D8D0), // Set button color to #81D8D0
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8), // Square-ish corners
+                  borderRadius: BorderRadius.circular(8), // Rounded corners
                 ),
               ),
               child: const Text(
@@ -51,16 +54,17 @@ class WelcomeScreen extends StatelessWidget {
             // Sign In Button
             ElevatedButton(
               onPressed: () {
-                // Placeholder for Sign In functionality
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Sign In clicked')),
+                // Navigate to the LoginScreen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 18), // Wider and taller
-                backgroundColor: Color(0xFF81D8D0), // Set button color to #81D8D0
+                backgroundColor: const Color(0xFF81D8D0), // Set button color to #81D8D0
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8), // Square-ish corners
+                  borderRadius: BorderRadius.circular(8), // Rounded corners
                 ),
               ),
               child: const Text(
